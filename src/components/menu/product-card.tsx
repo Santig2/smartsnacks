@@ -42,9 +42,6 @@ export function ProductCard({ product, onClick }: ProductCardProps) {
           <h3 className="text-xl font-bold text-[#17343A] group-hover:text-[#E83C8B] transition-colors leading-tight">
             {product.name}
           </h3>
-          <span className="text-lg font-bold text-[#17343A] whitespace-nowrap">
-            {product.pricePlaceholder ? `$${product.pricePlaceholder.replace(/[^0-9.]/g, '') || "10.00"}` : "$10.00"}
-          </span>
         </div>
 
         {/* Short Description */}

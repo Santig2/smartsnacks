@@ -143,9 +143,9 @@ export function ProductModal({ product, isOpen, onClose }: ProductModalProps) {
                 {/* Footer / CTA Actions */}
                 <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pt-4 border-t border-[#17343A]/10">
                   <div className="text-center sm:text-left">
-                    <p className="text-[#3D585E] text-xs font-bold uppercase tracking-wider mb-0.5">Estimated Price</p>
+                    <p className="text-[#3D585E] text-xs font-bold uppercase tracking-wider mb-0.5">Availability</p>
                     <p className="text-[#17343A] font-medium text-sm">
-                      {product.pricePlaceholder || "Made Fresh to Order"}
+                      Made Fresh to Order
                     </p>
                   </div>
                   

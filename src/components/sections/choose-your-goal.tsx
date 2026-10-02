@@ -56,10 +56,6 @@ export function ChooseYourGoalSection() {
                   <h3 className="text-lg font-bold text-[#17343A] uppercase tracking-wider truncate">
                     {product.name}
                   </h3>
-                  <div className="flex-1 border-b-2 border-dotted border-[#17343A]/20 mb-1.5 mx-2" />
-                  <span className="text-lg font-bold text-[#17343A] shrink-0">
-                    {product.pricePlaceholder ? `$${product.pricePlaceholder.replace(/[^0-9.]/g, '') || "10.00"}` : "$10.00"}
-                  </span>
                 </div>
 
                 {/* Description */}
