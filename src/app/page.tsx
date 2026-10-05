@@ -6,7 +6,6 @@ import { FAQS } from "@/content/faqs";
 import { HeroSection } from "@/components/hero/hero-section";
 import { FeaturedCategoriesSection } from "@/components/sections/featured-categories";
 import { FeaturedProductsSection } from "@/components/sections/featured-products";
-import { BrandPillarsSection } from "@/components/sections/brand-pillars";
 import { ChooseYourGoalSection } from "@/components/sections/choose-your-goal";
 import { CommunityLifestyleSection } from "@/components/sections/community-lifestyle";
 import { InstagramFeedSection } from "@/components/sections/instagram-feed";
@@ -17,6 +16,8 @@ import { FinalCTASection } from "@/components/sections/final-cta";
 import { MeetCrafterSection } from "@/components/sections/meet-crafter";
 import { JoinClubSection } from "@/components/sections/join-club";
 import { BannerSeparator } from "@/components/ui/banner-separator";
+import { BodyScannerCTA } from "@/components/sections/body-scanner-cta";
+import { WorkWithUsSection } from "@/components/sections/work-with-us";
 
 export const metadata: Metadata = constructMetadata({
   title: SEO_PAGE_CONFIG.home.title,
@@ -53,8 +54,6 @@ export default function Home() {
           href="/menu"
         />
         
-        <BrandPillarsSection />
-        
         <ChooseYourGoalSection />
         
         <CommunityLifestyleSection />
@@ -80,6 +79,10 @@ export default function Home() {
           alt="Ready to Fuel Your Day? Pembroke Pines Nutrition Bar"
           href="/menu"
         />
+
+        <BodyScannerCTA />
+        
+        <WorkWithUsSection />
 
         <FAQSection />
         

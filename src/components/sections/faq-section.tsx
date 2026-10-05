@@ -30,7 +30,7 @@ export function FAQSection() {
   return (
     <section 
       ref={sectionRef} 
-      className="py-20 sm:py-28 bg-[#FDF9F3] border-t border-[#17343A]/10 relative overflow-hidden" 
+      className="py-32 sm:py-40 bg-[#FDF9F3] border-t border-[#17343A]/10 relative overflow-hidden" 
       aria-labelledby="faq-heading"
     >
       {/* Left Edge Asset: shakes-assets-nobg (Animated entrance + scroll parallax) */}

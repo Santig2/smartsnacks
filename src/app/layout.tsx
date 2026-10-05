@@ -4,6 +4,7 @@ import { Analytics } from "@vercel/analytics/react";
 import { SpeedInsights } from "@vercel/speed-insights/next";
 import { GoogleAnalytics } from "@next/third-parties/google";
 import { Header } from "@/components/layout/header";
+import { WhatsAppButton } from "@/components/ui/whatsapp-button";
 import Link from "next/link";
 import Image from "next/image";
 import { STORE_LOCATION } from "@/data/locations";
@@ -249,12 +250,31 @@ export default function RootLayout({
 
             </div>
 
-            <div className="pt-8 border-t border-white/10 flex flex-col sm:flex-row items-center justify-between gap-4 text-[#EBF8FA]/60 text-[11px]">
-              <p>&copy; 2026 Smart Snack Nutrition. All rights reserved. Pembroke Pines, Florida.</p>
-              <div className="flex gap-4">
+            <div className="pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-6 text-[#EBF8FA]/60 text-[11px]">
+              <div className="flex flex-col sm:flex-row items-center gap-2 text-center md:text-left">
+                <p>&copy; 2026 Smart Snack Nutrition. All rights reserved. Pembroke Pines, Florida.</p>
+                <span className="hidden sm:inline text-white/20">•</span>
+                <p>
+                  Built by{" "}
+                  <a 
+                    href="https://www.addstrategic.com/en" 
+                    target="_blank" 
+                    rel="noopener noreferrer"
+                    className="text-[#55C5D5] hover:text-white font-semibold transition-colors underline-offset-2 hover:underline"
+                  >
+                    ADDSTRATEGIC
+                  </a>
+                </p>
+              </div>
+              <div className="flex flex-wrap justify-center md:justify-end gap-x-6 gap-y-2">
+                <Link href="/join" className="hover:text-[#55C5D5] transition-colors font-bold">Join Our Team</Link>
                 <Link href="/location" className="hover:text-white transition-colors">Location</Link>
                 <Link href="/menu" className="hover:text-white transition-colors">Menu</Link>
                 <Link href="/contact" className="hover:text-white transition-colors">Contact</Link>
+                <span className="hidden md:inline text-white/20">|</span>
+                <Link href="/legal/privacy-policy" className="hover:text-white transition-colors">Privacy Policy</Link>
+                <Link href="/legal/terms" className="hover:text-white transition-colors">Terms of Service</Link>
+                <Link href="/legal/disclaimer" className="hover:text-white transition-colors">Disclaimer</Link>
               </div>
             </div>
           </div>
@@ -264,6 +284,8 @@ export default function RootLayout({
         <Analytics />
         <SpeedInsights />
         {process.env.NEXT_PUBLIC_GA_ID && <GoogleAnalytics gaId={gaId} />}
+        
+        <WhatsAppButton />
       </body>
     </html>
   );

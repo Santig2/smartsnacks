@@ -16,7 +16,7 @@ export function MeetCrafterSection() {
   };
 
   return (
-    <section id="meet-the-crafter" className="scroll-mt-24 py-24 bg-[#FDF9F3] overflow-hidden">
+    <section id="meet-the-crafter" className="scroll-mt-24 py-32 sm:py-40 bg-[#FDF9F3] overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 items-center">
           

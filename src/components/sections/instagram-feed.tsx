@@ -1,4 +1,5 @@
 import Image from "next/image";
+import { AutoplayVideo } from "@/components/ui/autoplay-video";
 
 export function InstagramFeedSection() {
   const mediaItems = [
@@ -39,12 +40,8 @@ export function InstagramFeedSection() {
                   className="object-cover transition-transform duration-700 hover:scale-110"
                 />
               ) : (
-                <video
+                <AutoplayVideo
                   src={media.src}
-                  autoPlay
-                  loop
-                  muted
-                  playsInline
                   className="w-full h-full object-cover transition-transform duration-700 hover:scale-110"
                 />
               )}

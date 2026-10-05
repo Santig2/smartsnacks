@@ -3,6 +3,7 @@
 import Link from "next/link";
 import { motion } from "motion/react";
 import Image from "next/image";
+import { AutoplayVideo } from "@/components/ui/autoplay-video";
 
 export function FinalCTASection() {
   const fadeUp: any = {
@@ -17,12 +18,8 @@ export function FinalCTASection() {
     >
       {/* Background Image */}
       <div className="absolute inset-0 w-full h-full z-0">
-        <video 
+        <AutoplayVideo 
           src="/assets/images/video-hero1.mp4" 
-          autoPlay 
-          loop 
-          muted 
-          playsInline
           className="w-full h-full object-cover object-center"
         />
         {/* Dark overlay for text contrast */}

@@ -11,7 +11,7 @@ export function FeaturedCategoriesSection() {
   };
 
   return (
-    <section className="py-14 sm:py-20 relative overflow-hidden bg-[#F2F2F4] border-b border-[#17343A]/10" aria-labelledby="categories-heading">
+    <section className="py-24 sm:py-32 relative overflow-hidden bg-[#F2F2F4] border-b border-[#17343A]/10" aria-labelledby="categories-heading">
       {/* Background Image: shakes-assets-nobg with soft grey fade */}
       <div className="absolute inset-0 z-0 flex items-center justify-center pointer-events-none select-none overflow-hidden" aria-hidden="true">
         <div className="relative w-[650px] sm:w-[850px] md:w-[1050px] h-[420px] sm:h-[520px] md:h-[620px] opacity-65">

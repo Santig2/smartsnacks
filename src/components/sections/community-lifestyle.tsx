@@ -11,103 +11,101 @@ export function CommunityLifestyleSection() {
   };
 
   return (
-    <section className="py-24 bg-[#FDF9F3]" aria-labelledby="promos-heading">
+    <section className="py-32 sm:py-40 bg-[#FDF9F3]" aria-labelledby="promos-heading">
       <motion.div 
         initial="hidden"
         whileInView="visible"
         viewport={{ once: true, margin: "-100px" }}
         variants={{ visible: { transition: { staggerChildren: 0.15 } } }}
-        className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8"
+        className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"
       >
         <h2 id="promos-heading" className="sr-only">Promotions and Lifestyle</h2>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8 mb-6 lg:mb-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16">
           
-          {/* Top Left: Delicious Food */}
-          <motion.div variants={fadeUp} className="relative h-[300px] sm:h-[400px] bg-gray-200 overflow-hidden group">
-            <Image 
-              src="/assets/images/hero_shakes_teas.jpg" 
-              alt="Delicious Shakes" 
-              fill 
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-[#17343A]/60 flex flex-col items-center justify-center text-center p-8">
-              <h3 className="text-3xl sm:text-4xl font-black text-white uppercase tracking-wider mb-4">
-                Smart Nutrition
+          {/* Left Column: Large Hero Image + Welcoming Atmosphere */}
+          <motion.div variants={fadeUp} className="lg:col-span-7 flex flex-col gap-12">
+            <div className="relative w-full h-[450px] sm:h-[550px] lg:h-[650px] rounded-[2.5rem] overflow-hidden shadow-2xl group bg-[#F7FAFA]">
+              <Image 
+                src="/assets/images/colage1.png" 
+                alt="Smart Snack Nutrition Lifestyle & Products Collage" 
+                fill 
+                className="object-cover object-center transition-transform duration-1000 group-hover:scale-105"
+              />
+            </div>
+            
+            <div className="max-w-xl pr-0 lg:pr-8">
+              <div className="w-16 h-1 bg-[#F4C84A] mb-8 rounded-full" />
+              <h3 className="text-3xl sm:text-4xl font-black text-[#17343A] uppercase tracking-wide mb-6 leading-tight">
+                Your Daily <br/> Wellness Sanctuary
               </h3>
-              <p className="text-white/90 text-sm max-w-sm mb-8 leading-relaxed hidden sm:block">
-                Our protein shakes are crafted to taste like a cheat meal, while delivering the premium nutrition your body needs.
+              <p className="text-[#3D585E] text-lg leading-relaxed">
+                Step into a space designed for you to thrive. Whether you're grabbing a quick post-workout shake, bringing your laptop to work while sipping a loaded tea, or meeting friends, our club offers a welcoming atmosphere that feels like home.
               </p>
-              <Link
-                href="/menu"
-                className="clay-btn-yellow text-[#17343A] font-bold px-8 py-3 uppercase tracking-wider inline-flex"
-              >
+            </div>
+          </motion.div>
+
+          {/* Right Column: Editorial Stack */}
+          <motion.div variants={fadeUp} className="lg:col-span-5 flex flex-col gap-12 lg:pt-8">
+            
+            {/* Premium Fuel */}
+            <div className="border-t-2 border-[#17343A]/10 pt-8">
+              <h3 className="text-2xl font-black text-[#17343A] uppercase tracking-wider mb-4">
+                Premium Fuel
+              </h3>
+              <p className="text-[#3D585E] text-lg leading-relaxed mb-8">
+                Our protein shakes are crafted to taste like a cheat meal, while delivering the premium nutrition your body needs to recover and grow. 
+              </p>
+              <Link href="/menu" className="inline-flex items-center text-[#E83C8B] font-black uppercase tracking-widest text-sm group">
                 View Menus
+                <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </Link>
             </div>
-          </motion.div>
 
-          {/* Top Right: Special Events */}
-          <motion.div variants={fadeUp} className="relative h-[300px] sm:h-[400px] bg-gray-200 overflow-hidden group">
-            <Image 
-              src="/assets/images/community-events.png" 
-              alt="Community Workout Events & Challenges" 
-              fill 
-              className="object-cover transition-transform duration-700 group-hover:scale-105"
-            />
-            <div className="absolute inset-0 bg-[#17343A]/60 flex flex-col items-center justify-center text-center p-8">
-              <h3 className="text-3xl sm:text-4xl font-black text-white uppercase tracking-wider mb-4">
+            {/* Community Events */}
+            <div className="border-t-2 border-[#17343A]/10 pt-8">
+              <div className="relative w-full h-[260px] rounded-[2rem] overflow-hidden mb-8 shadow-lg group">
+                 <Image 
+                  src="/assets/images/community-events.png" 
+                  alt="Community Events" 
+                  fill 
+                  className="object-cover transition-transform duration-700 group-hover:scale-105"
+                />
+              </div>
+              <h3 className="text-2xl font-black text-[#17343A] uppercase tracking-wider mb-4">
                 Community Events
               </h3>
-              <p className="text-white/90 text-sm max-w-sm mb-8 leading-relaxed hidden sm:block">
+              <p className="text-[#3D585E] text-lg leading-relaxed mb-8">
                 Join our workout camps, wellness challenges, and community hangouts right here in Pembroke Pines.
               </p>
-              <a
-                href="https://jairoguerrero.herbalife.com/es-us/u/loyalty-premium"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="clay-btn-yellow text-[#17343A] font-bold px-8 py-3 uppercase tracking-wider inline-flex"
-              >
+              <a href="https://jairoguerrero.herbalife.com/es-us/u/loyalty-premium" target="_blank" rel="noopener noreferrer" className="inline-flex items-center text-[#55C5D5] font-black uppercase tracking-widest text-sm group">
                 Join the Club
+                <svg className="ml-2 w-4 h-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth="2.5"><path strokeLinecap="round" strokeLinejoin="round" d="M17 8l4 4m0 0l-4 4m4-4H3" /></svg>
               </a>
             </div>
+
+            {/* Combo Specials Highlight */}
+            <div className="bg-[#E83C8B] rounded-[2rem] p-8 sm:p-10 text-white relative overflow-hidden mt-4 shadow-xl">
+               <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none translate-x-1/4 translate-y-1/4">
+                 <svg width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
+                   <path d="M17 10l-4-4-4 4"/>
+                   <path d="M13 6v16"/>
+                 </svg>
+               </div>
+               
+               <div className="border border-white/30 inline-flex px-3 py-1.5 text-[10px] font-black uppercase tracking-widest rounded-md mb-6">
+                 Limited Time
+               </div>
+               
+               <h3 className="text-3xl sm:text-4xl font-black uppercase tracking-wide mb-3 leading-tight">
+                 Combo<br/>Specials
+               </h3>
+               <p className="text-white/95 text-lg font-medium">
+                 Pair a Shake & Tea for the ultimate boost.
+               </p>
+            </div>
+
           </motion.div>
-
-        </div>
-
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 lg:gap-8">
-          
-          {/* Bottom Left: Welcoming Atmosphere */}
-          <motion.div variants={fadeUp} className="bg-white p-10 sm:p-14 flex flex-col justify-center border-l-4 border-[#F4C84A] shadow-sm">
-            <h3 className="text-2xl font-black text-[#17343A] uppercase tracking-wide mb-6">
-              Welcoming Atmosphere
-            </h3>
-            <p className="text-[#3D585E] leading-relaxed text-sm sm:text-base">
-              Step into a space designed for you to thrive. Whether you're grabbing a quick post-workout shake, bringing your laptop to work while sipping a loaded tea, or meeting friends, our club is your daily wellness sanctuary.
-            </p>
-          </motion.div>
-
-          {/* Bottom Right: Happy Hour Pink Box */}
-          <motion.div variants={fadeUp} className="bg-[#E83C8B] p-10 sm:p-14 flex flex-col justify-center text-white shadow-sm relative overflow-hidden">
-             <div className="absolute right-0 bottom-0 opacity-10 pointer-events-none translate-x-1/4 translate-y-1/4">
-               <svg width="200" height="200" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-                 <path d="M17 10l-4-4-4 4"/>
-                 <path d="M13 6v16"/>
-               </svg>
-             </div>
-             
-             <div className="border border-white/30 inline-flex self-start px-3 py-1 text-xs font-bold uppercase tracking-wider rounded mb-6">
-               Limited Time
-             </div>
-             
-             <h3 className="text-4xl sm:text-5xl font-black uppercase tracking-wider mb-2 leading-tight">
-               Combo<br/>Specials
-             </h3>
-             <p className="text-white/90 text-lg font-bold">
-               Pair a Shake & Tea for the ultimate boost.
-             </p>
-          </motion.div>
-
         </div>
 
       </motion.div>

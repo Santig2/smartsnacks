@@ -91,76 +91,83 @@ export function Header() {
           </nav>
 
           {/* Mobile Hamburger Toggle */}
-          <div className="flex xl:hidden items-center">
+          <div className="flex xl:hidden items-center z-50">
             <button
               type="button"
-              className={`inline-flex items-center justify-center p-2 rounded-full transition-colors ${isHome && !isScrolled ? 'text-white hover:bg-white/10' : 'text-[#17343A] hover:bg-black/5'}`}
+              className={`relative w-12 h-12 flex items-center justify-center rounded-full transition-colors duration-500 z-50 ${
+                isMobileMenuOpen 
+                  ? 'text-white hover:bg-white/10' 
+                  : (isHome && !isScrolled ? 'text-white hover:bg-white/10' : 'text-[#17343A] hover:bg-[#17343A]/5')
+              }`}
               aria-controls="mobile-nav"
               aria-expanded={isMobileMenuOpen}
               onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
               aria-label="Toggle navigation menu"
             >
-              {isMobileMenuOpen ? (
-                <X className="w-6 h-6" aria-hidden="true" />
-              ) : (
-                <Menu className="w-6 h-6" aria-hidden="true" />
-              )}
+              <div className="relative w-5 h-4">
+                <span className={`absolute left-0 top-0 w-full h-0.5 bg-current transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${isMobileMenuOpen ? 'rotate-45 translate-y-[7px]' : ''}`} />
+                <span className={`absolute left-0 top-1/2 -translate-y-1/2 w-full h-0.5 bg-current transition-all duration-300 ${isMobileMenuOpen ? 'opacity-0 translate-x-2' : ''}`} />
+                <span className={`absolute left-0 bottom-0 w-full h-0.5 bg-current transition-all duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] ${isMobileMenuOpen ? '-rotate-45 -translate-y-[7px]' : ''}`} />
+              </div>
             </button>
           </div>
 
         </div>
       </div>
 
-      {/* Mobile Drawer Menu */}
+      {/* Mobile Drawer Overlay & Menu */}
       {isMobileMenuOpen && (
         <div
           id="mobile-nav"
-          className="xl:hidden border-t border-[#17343A]/10 bg-[#FDF9F3] px-6 py-6 shadow-xl animate-in slide-in-from-top duration-200"
+          className="fixed inset-0 z-40 bg-[#17343A]/90 backdrop-blur-3xl animate-in fade-in duration-500 ease-[cubic-bezier(0.32,0.72,0,1)] flex flex-col justify-center px-8"
         >
-          <nav className="flex flex-col gap-4" aria-label="Mobile Navigation">
-            {navLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={link.href}
-                onClick={() => setIsMobileMenuOpen(false)}
-                className="text-base font-bold text-[#17343A] hover:text-[#55C5D5] py-2 border-b border-[#17343A]/5 transition-colors"
-              >
-                {link.label}
-              </Link>
+          <nav className="flex flex-col gap-6" aria-label="Mobile Navigation">
+            {navLinks.map((link, i) => (
+              <div key={link.href} className="overflow-hidden">
+                <Link
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className="block text-3xl font-black text-white hover:text-[#55C5D5] transition-colors animate-in slide-in-from-bottom-12 fade-in duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] fill-mode-both"
+                  style={{ animationDelay: `${100 + i * 50}ms` }}
+                >
+                  {link.label}
+                </Link>
+              </div>
             ))}
 
-            <a
-              href="https://jairoguerrero.herbalife.com/es-us/u/loyalty-premium"
-              target="_blank"
-              rel="noopener noreferrer"
-              onClick={() => setIsMobileMenuOpen(false)}
-              className="inline-flex items-center justify-between text-sm font-bold text-[#17343A] bg-white border border-[#17343A]/15 px-4 py-3 rounded-2xl mt-2 transition-colors"
-            >
-              <span>Shop Nutrition Products Online</span>
-              <ExternalLink className="w-4 h-4 text-[#55C5D5]" aria-hidden="true" />
-            </a>
-
-            <div className="pt-4 flex flex-col gap-2.5">
-              <Link
-                href="/menu"
-                className="w-full justify-center clay-btn-yellow inline-flex items-center font-bold px-6 py-3 uppercase tracking-wider mb-3 rounded-full"
+            <div className="overflow-hidden mt-6">
+              <a
+                href="https://jairoguerrero.herbalife.com/es-us/u/loyalty-premium"
+                target="_blank"
+                rel="noopener noreferrer"
                 onClick={() => setIsMobileMenuOpen(false)}
+                className="inline-flex items-center gap-3 text-lg font-bold text-[#F4C84A] hover:text-white transition-colors animate-in slide-in-from-bottom-12 fade-in duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] fill-mode-both"
+                style={{ animationDelay: `${100 + navLinks.length * 50}ms` }}
               >
-                Explore Full Menu
-              </Link>
+                <span>Shop Nutrition Products</span>
+                <ExternalLink className="w-5 h-5" aria-hidden="true" />
+              </a>
+            </div>
 
-              <Link
-                href="/#location"
-                className="w-full justify-center clay-btn-aqua inline-flex items-center font-bold px-6 py-3 uppercase tracking-wider rounded-full text-white"
-                onClick={() => setIsMobileMenuOpen(false)}
+            <div className="pt-8 overflow-hidden">
+              <div 
+                className="animate-in slide-in-from-bottom-12 fade-in duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] fill-mode-both"
+                style={{ animationDelay: `${150 + navLinks.length * 50}ms` }}
               >
-                <MapPin className="w-4 h-4 mr-2" aria-hidden="true" />
-                Visit Store & Directions
-              </Link>
+                <Link
+                  href="/menu"
+                  className="w-full justify-center bg-[#55C5D5] text-[#17343A] hover:bg-[#42B3C3] inline-flex items-center font-bold px-8 py-4 uppercase tracking-wider rounded-full text-sm transition-transform active:scale-[0.98]"
+                  onClick={() => setIsMobileMenuOpen(false)}
+                >
+                  Explore Full Menu
+                </Link>
+              </div>
             </div>
           </nav>
         </div>
       )}
+
+
     </header>
   );
 }
